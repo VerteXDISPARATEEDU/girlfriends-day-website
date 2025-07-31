@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Message For You</title>
+    <style>
+        body {
+            background: #ffe6f0;
+            text-align: center;
+            font-family: 'Segoe UI', cursive;
+            padding: 50px;
+            color: #c2185b;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            top: -50px;
+            animation: fall 5s infinite linear;
+            font-size: 2em;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .choice-button {
+            padding: 15px 25px;
+            background: #ff8da7;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .choice-button:hover {
+            background: #ff5c80;
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+    <h1>A Little Message for You 💌</h1>
+    <p style="font-size:1.3em; max-width: 600px; margin: auto;">You are the light of my life. Every moment with you is a blessing. I love you so much. ❤️</p>
+    <br>
+    <div class="button-container">
+        <a href="page3.html" class="choice-button">Things I like about you</a>
+        <a href="page4.html" class="choice-button">Things I hate about you</a>
+    </div>
+    <!-- Falling Hearts -->
+    <script>
+        const colors = ["💖", "💕", "💘", "💗"];
+        for (let i = 0; i < 30; i++) {
+            let heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerText = colors[Math.floor(Math.random()*colors.length)];
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (2 + Math.random()*3) + "s";
+            document.body.appendChild(heart);
+        }
+    </script>
+</body>
+</html>

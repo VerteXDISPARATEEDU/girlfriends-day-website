@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Gift 🎁</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #fff0f6;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            color: #4a0d36;
+        }
+        .gift-container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+        }
+        .gift-card {
+            width: 90%;
+            margin: 20px auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .gift-card:hover {
+            transform: scale(1.03);
+        }
+        .message {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .gift-detail-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #c2185b;
+            font-weight: bold;
+        }
+        .gift-detail-row p {
+            margin: 0;
+            padding-right: 10px;
+        }
+        .copy-button {
+            padding: 5px 10px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 5px;
+            transition: background-color 0.2s ease;
+        }
+        .copy-button:hover {
+            background-color: #e5396e;
+        }
+        .copy-message {
+            margin-top: 10px;
+            color: green;
+            font-size: 0.9em;
+            height: 1.2em; /* Reserve space to prevent layout shift */
+        }
+    </style>
+</head>
+<body>
+    <div class="gift-container">
+        <h1>Your Gift Card 💝</h1>
+        <p class="message">
+            I know I can’t send you gifts the way I want to, because life has tied our hands a bit.<br>
+            But here’s a ₹500 gift card — my little way of saying: you deserve every bit of joy.<br>
+            Order anything you love from Nykaa, and let this be my small contribution to your smile.<br><br>
+            Happy Girlfriend’s Day, meri chhipkali 💝
+        </p>
+        <img src="https://www.publicdomainpictures.net/pictures/290000/velka/gift-card-voucher.jpg" alt="Gift Card" class="gift-card">
+        
+        <div class="gift-detail-row">
+            <p><strong>Gift Card Number:</strong> <span id="giftCardNumber">6002940106013271</span></p>
+            <button class="copy-button" onclick="copyToClipboard('giftCardNumber', 'copyMessageNumber')">Copy</button>
+        </div>
+        <div id="copyMessageNumber" class="copy-message"></div>
+
+        <div class="gift-detail-row">
+            <p><strong>PIN:</strong> <span id="giftCardPin">122955</span></p>
+            <button class="copy-button" onclick="copyToClipboard('giftCardPin', 'copyMessagePin')">Copy</button>
+        </div>
+        <div id="copyMessagePin" class="copy-message"></div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId, messageElementId) {
+            const element = document.getElementById(elementId);
+            const textToCopy = element.innerText;
+            const messageElement = document.getElementById(messageElementId);
+
+            // Create a temporary textarea element to copy the text
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            // Make it invisible but accessible for selection
+            tempTextArea.style.position = 'absolute';
+            tempTextArea.style.left = '-9999px';
+            tempTextArea.style.top = '-9999px';
+            tempTextArea.style.opacity = '0'; // Ensure it's invisible
+            tempTextArea.style.width = '1px'; // Make it tiny
+            tempTextArea.style.height = '1px'; // Make it tiny
+
+            document.body.appendChild(tempTextArea);
+
+            // Select the text
+            tempTextArea.focus();
+            tempTextArea.select();
+
+            // For iOS devices, range selection is sometimes needed
+            if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+                const range = document.createRange();
+                range.selectNodeContents(tempTextArea);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    messageElement.innerText = 'Copied!';
+                    messageElement.style.color = 'green';
+                } else {
+                    messageElement.innerText = 'Failed to copy!';
+                    messageElement.style.color = 'red';
+                }
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                messageElement.innerText = 'Failed to copy!';
+                messageElement.style.color = 'red';
+            } finally {
+                document.body.removeChild(tempTextArea);
+                setTimeout(() => {
+                    messageElement.innerText = '';
+                }, 2000); // Clear message after 2 seconds
+            }
+        }
+    </script>
+</body>
+</html>

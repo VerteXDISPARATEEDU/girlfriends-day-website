@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Things I Like About You</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            background: #fff5f8;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            text-align: center;
+        }
+        .box {
+            max-width: 300px;
+            background: #ffeef4;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+            margin: 20px;
+            position: absolute; /* Keep absolute for positioning */
+            opacity: 0;
+            animation: fadeIn 1s forwards; /* Changed animation name */
+        }
+        /* New animation for fading in */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .navigation-buttons {
+            margin-top: 40px;
+            position: relative; /* Ensure buttons are above floating boxes */
+            z-index: 10;
+        }
+        .navigation-buttons a {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 10px 20px;
+            background: #ff8da7;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .navigation-buttons a:hover {
+            background: #ff5c80;
+        }
+    </style>
+</head>
+<body>
+    <h2>Things I Absolutely Love About You ❤️</h2>
+
+    <div id="container"></div>
+
+    <div class="navigation-buttons">
+        <a href="page2.html">Back</a>
+        <a href="final.html">Next</a>
+    </div>
+
+    <audio autoplay loop>
+        <source src="sweet_music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+        const messages = [
+            "tum pyari hai", "tum bahut zada sundar hai", "tum bahut caring hai",
+            "tum bahut pyar karti humse aur badle mai sirf mera pyar mangti",
+            "tumhari harr ada ekdum uffff🤌🏿🤌🏿🤌🏿🤌🏿", "tum humko tension se free kardeti...",
+            "tumhari smile se pyari cheez maine shayd hi kabhi dekhi hogiii",
+            "tumhari brown eyes mai dub jaane ka Mann sa karta hai",
+            "tumhare pass dressing sense hai", "tum bahut zada sexy haiiiii",
+            "tum ittaaaaa nakhra karti, drama karti... Humko bahut pasand hai",
+            "tum jiss tarah walk karti ho... bahuttt zadaaaaaaaa👌🏿👌🏿👌🏿👌🏿",
+            "tumhare sath ekdum ghar wali feeling aati...", "Tumhare samne ekdum khul kar reh sakte hai",
+            "tumhare samne mere aansu nikalte hai...", "Tumhare sath jo feel karte wo aajtak hum kisi ke sath feel nhi kiyee",
+            "tum humse sab kuch share karti hai", "tumko mere bura lagne parr bura lagta hai",
+            "tumko actually farak parta hai mere hone ya na hone se",
+            "besides family, my real family, you are the only one I can call family",
+            "tum itti zada pasand ho humko ki tum mere dimag mai ekdum ghus chuki ho...",
+            "hum kabhi tumko jann kar hurt nhi kar sakte",
+            "tumse zada derr tak gussa reh hi nhi paate hum",
+            "tumhari smile ke baare mai bataye kya tumko... Ek aur baar ginn lo kyuki bahut pyari hai...😘😘😘",
+            "Tumhari chehre par ki khushi dekhne ke liye hum din raat ek kar sakte...",
+            "tum humse uncomfortable feel nhi karti chahe hum jo kare...",
+            "Tum mere harr crime meri partner banne ko taiyaar hai...",
+            "Tum humko kabhi judge nhi karti...", "Tum baaki kisi ke samne kabhi mera majak nhi banati...",
+            "Tum kuch bhi kar sakti mere liye...", "Humko acha lagta hai jab future sath imagine karte",
+            "tumse baat karne ke baad... sab kuch light feel hota hai",
+            "Tum bahut zada physically bhi attract karti humko",
+            "tum humko turn on karne ki Shakti rakhti ho",
+            "hum tumse bahut zada attach ho gye hai",
+            "tum bahut zada excite kar deti humko",
+            "tumko dekhte hi mera body mere control se bahar chala jata",
+            "tumko dekhte hi hum bhul jaate ki koi maryada bhi hoti",
+            "tumko dekhte hai toh buss mann karta ki tumko chhore hi naa",
+            "tumko hugg karte toh lagta ki ekdum heaven mai hai",
+            "tumko kiss karte toh lagta ki isse behtar koi feeling nhi ho sakti...",
+            "Tum bahut zadddaaa pretty ho... Kuch zada hi...",
+            "I know hum dono ke beech mein ladai bhi hoti hai... Lekin itni ladai ke baad bhi tum humse utna hi pyar karti ho...",
+        ];
+
+        const container = document.getElementById("container");
+
+        let delay = 0;
+        messages.forEach((msg, index) => {
+            setTimeout(() => {
+                const div = document.createElement("div");
+                div.className = "box";
+                div.innerText = msg;
+                // Set random positions
+                div.style.left = Math.random() * 80 + 10 + "vw"; // 10% to 90% from left
+                div.style.top = Math.random() * 70 + 15 + "vh"; // 15% to 85% from top
+                container.appendChild(div);
+            }, delay);
+            delay += 2000; // 2 seconds per message
+        });
+    </script>
+</body>
+</html>
