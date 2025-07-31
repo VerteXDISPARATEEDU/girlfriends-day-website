@@ -3,21 +3,22 @@
 <html>
 <head>
     <title>A Message For You</title>
-     <meta name="robots" content="noindex"> <!-- Added noindex tag -->
+    <meta name="robots" content="noindex"> <!-- Added noindex tag -->
     <style>
         body {
-            background: #ffe6f0;
+            background: #FFECF2; /* Very light, soft pink */
             text-align: center;
             font-family: 'Segoe UI', cursive;
             padding: 50px;
-            color: #c2185b;
+            color: #D81B60; /* Deep Rose Pink */
             overflow: hidden;
         }
         .heart {
             position: absolute;
             top: -50px;
             animation: fall 5s infinite linear;
-            font-size: 2em;
+            font-size: 2.5em; /* Slightly larger hearts */
+            opacity: 0.8;
         }
         @keyframes fall {
             0% { transform: translateY(-100px); opacity: 1; }
@@ -31,17 +32,20 @@
         }
         .choice-button {
             padding: 15px 25px;
-            background: #ff8da7;
+            background: #FF69B4; /* Hot Pink */
             color: white;
             font-size: 18px;
             border: none;
-            border-radius: 10px;
+            border-radius: 15px; /* More rounded */
             cursor: pointer;
             text-decoration: none;
-            transition: 0.3s;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
         }
         .choice-button:hover {
-            background: #ff5c80;
+            background: #FF1493; /* Deeper Pink on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -59,13 +63,14 @@
     </div>
     <!-- Falling Hearts -->
     <script>
-        const colors = ["💖", "💕", "💘", "💗"];
-        for (let i = 0; i < 30; i++) {
+        const colors = ["💖", "💕", "💘", "💗", "🩷", "❤️", "🧡", "💛"]; /* Added more heart colors */
+        for (let i = 0; i < 40; i++) { /* Increased number of hearts */
             let heart = document.createElement("div");
             heart.className = "heart";
             heart.innerText = colors[Math.floor(Math.random()*colors.length)];
             heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = (2 + Math.random()*3) + "s";
+            heart.style.animationDuration = (3 + Math.random()*4) + "s"; /* Varied duration */
+            heart.style.animationDelay = (Math.random()*3) + "s"; /* Varied delay for more dynamic fall */
             document.body.appendChild(heart);
         }
     </script>

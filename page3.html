@@ -5,48 +5,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Things I Like About You</title>
-     <meta name="robots" content="noindex"> <!-- Added noindex tag -->
+    <meta name="robots" content="noindex"> <!-- Added noindex tag -->
     <link rel="stylesheet" href="style.css" />
     <style>
         body {
-            background: #fff5f8;
+            background: #FFFAF0; /* Floral White - very light, warm */
             font-family: 'Arial', sans-serif;
             overflow-x: hidden;
             text-align: center;
+            color: #C71585; /* Medium Violet Red - deep romantic */
+        }
+        h2 {
+            font-size: 2.8em; /* Slightly larger heading */
+            margin-bottom: 40px;
+            color: #FF69B4; /* Hot Pink for heading */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         .box {
-            max-width: 300px;
-            background: #ffeef4;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+            max-width: 350px; /* Slightly wider boxes */
+            background: #FFF0F5; /* Lavender Blush - soft, romantic */
+            padding: 25px; /* More padding */
+            border-radius: 20px; /* More rounded */
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.8); /* More vivid shadow */
             margin: 20px;
-            position: absolute; /* Keep absolute for positioning */
+            position: absolute;
             opacity: 0;
-            animation: fadeIn 1s forwards; /* Changed animation name */
+            animation: fadeInScale 1s forwards; /* New animation name */
+            color: #D81B60; /* Deep Rose Pink for text */
+            font-size: 1.2em; /* Slightly larger text */
+            line-height: 1.5;
+            border: 2px solid #FFC0CB; /* Light pink border */
         }
-        /* New animation for fading in */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
         }
         .navigation-buttons {
             margin-top: 40px;
-            position: relative; /* Ensure buttons are above floating boxes */
+            position: relative;
             z-index: 10;
         }
         .navigation-buttons a {
             display: inline-block;
             margin: 10px 20px;
-            padding: 10px 20px;
-            background: #ff8da7;
+            padding: 12px 25px; /* Larger buttons */
+            background: #FF69B4; /* Hot Pink */
             color: white;
-            border-radius: 10px;
+            border-radius: 15px; /* More rounded */
             text-decoration: none;
-            transition: 0.3s;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
         }
         .navigation-buttons a:hover {
-            background: #ff5c80;
+            background: #FF1493; /* Deeper Pink on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -82,7 +95,7 @@
             "tum itti zada pasand ho humko ki tum mere dimag mai ekdum ghus chuki ho...",
             "hum kabhi tumko jann kar hurt nhi kar sakte",
             "tumse zada derr tak gussa reh hi nhi paate hum",
-            "tumhari smile ke baare mai bataye kya tumko... Ek aur baar ginn lo kyuki bahut pyari hai...😘😘😘",
+            "tumhari smile ke baare mai bataye kya tumko... Ek aur baar ginn lo kyuki bahut pyari hai...😘😘�",
             "Tumhari chehre par ki khushi dekhne ke liye hum din raat ek kar sakte...",
             "tum humse uncomfortable feel nhi karti chahe hum jo kare...",
             "Tum mere harr crime meri partner banne ko taiyaar hai...",
@@ -111,11 +124,11 @@
                 div.className = "box";
                 div.innerText = msg;
                 // Set random positions
-                div.style.left = Math.random() * 80 + 10 + "vw"; // 10% to 90% from left
-                div.style.top = Math.random() * 70 + 15 + "vh"; // 15% to 85% from top
+                div.style.left = Math.random() * 70 + 15 + "vw"; /* Adjusted range */
+                div.style.top = Math.random() * 60 + 20 + "vh"; /* Adjusted range */
                 container.appendChild(div);
             }, delay);
-            delay += 4000; // 4 seconds per message
+            delay += 3500; /* Slightly faster message appearance */
         });
     </script>
 </body>

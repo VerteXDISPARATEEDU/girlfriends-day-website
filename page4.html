@@ -3,18 +3,20 @@
 <html>
 <head>
     <title>Things I Hate About You</title>
-     <meta name="robots" content="noindex"> <!-- Added noindex tag -->
+    <meta name="robots" content="noindex"> <!-- Added noindex tag -->
     <style>
         body {
-            background: #fff3f3;
+            background: #FFD1DC; /* Light Pink */
             text-align: center;
             padding: 50px;
             font-family: sans-serif;
+            color: #DC143C; /* Crimson Red - for a stronger "hate" contrast */
         }
         h1 {
-            font-size: 40px;
-            color: #a10000;
+            font-size: 45px; /* Slightly larger */
             margin-top: 100px;
+            color: #FF0000; /* Bright Red */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         .navigation-buttons {
             margin-top: 60px;
@@ -22,15 +24,19 @@
         .navigation-buttons a {
             display: inline-block;
             margin: 10px 20px;
-            padding: 10px 20px;
-            background: #ff8da7;
+            padding: 12px 25px; /* Larger buttons */
+            background: #FF69B4; /* Hot Pink */
             color: white;
-            border-radius: 10px;
+            border: none;
+            border-radius: 15px; /* More rounded */
             text-decoration: none;
-            transition: 0.3s;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
         }
         .navigation-buttons a:hover {
-            background: #ff5c80;
+            background: #FF1493; /* Deeper Pink on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>

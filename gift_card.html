@@ -5,76 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Gift 🎁</title>
-     <meta name="robots" content="noindex"> <!-- Added noindex tag -->
+    <meta name="robots" content="noindex"> <!-- Added noindex tag -->
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background: #fff0f6;
+            background: #FFFAF0; /* Floral White - warm and inviting */
             font-family: 'Segoe UI', sans-serif;
             text-align: center;
             padding: 50px 20px;
-            color: #4a0d36;
+            color: #D81B60; /* Deep Rose Pink */
         }
         .gift-container {
-            max-width: 600px;
+            max-width: 650px; /* Slightly wider container */
             margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+            background: #FFFFFF; /* Pure white for clean look */
+            padding: 40px; /* More padding */
+            border-radius: 20px; /* More rounded */
+            box-shadow: 0 0 25px rgba(255, 105, 180, 0.5); /* More prominent, matching shadow */
         }
         .gift-card {
-            width: 90%;
-            margin: 20px auto;
-            border-radius: 10px;
+            width: 95%; /* Slightly larger gift card image */
+            margin: 25px auto; /* More margin */
+            border-radius: 15px; /* More rounded */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for the card */
             transition: transform 0.3s ease;
         }
         .gift-card:hover {
-            transform: scale(1.03);
+            transform: scale(1.02); /* Subtle scale on hover */
         }
         .message {
-            font-size: 1.1em;
-            margin-bottom: 25px;
-            line-height: 1.6;
+            font-size: 1.2em; /* Slightly larger message text */
+            margin-bottom: 30px; /* More space */
+            line-height: 1.7; /* Better readability */
+            color: #C71585; /* Medium Violet Red */
         }
         .gift-detail-row {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-            color: #c2185b;
+            margin-bottom: 15px; /* More space between rows */
+            font-size: 1.3em; /* Larger text */
+            color: #FF69B4; /* Hot Pink for details */
             font-weight: bold;
         }
         .gift-detail-row p {
             margin: 0;
-            padding-right: 10px;
+            padding-right: 15px; /* More padding */
         }
         .copy-button {
-            padding: 5px 10px;
-            background-color: #ff69b4;
+            padding: 8px 15px; /* Larger button */
+            background-color: #FF69B4; /* Hot Pink */
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px; /* More rounded */
             cursor: pointer;
-            font-size: 0.9em;
-            margin-left: 5px;
-            transition: background-color 0.2s ease;
+            font-size: 1em; /* Slightly larger font */
+            margin-left: 10px; /* More margin */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
         }
         .copy-button:hover {
-            background-color: #e5396e;
+            background-color: #FF1493; /* Deeper Pink on hover */
+            transform: translateY(-1px);
         }
         .copy-message {
             margin-top: 10px;
-            color: green;
-            font-size: 0.9em;
-            height: 1.2em; /* Reserve space to prevent layout shift */
+            color: #28A745; /* Green for success message */
+            font-size: 1em;
+            height: 1.5em; /* Reserve space to prevent layout shift */
+            font-weight: normal;
         }
     </style>
 </head>
 <body>
     <audio autoplay loop>
         <source src="https://freepd.com/music/Nostalgic%20Piano.mp3" type="audio/mpeg">
+        Your browser does not support audio.
     </audio>
     <div class="gift-container">
         <h1>Your Gift Card 💝</h1>
